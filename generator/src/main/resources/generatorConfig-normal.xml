@@ -7,8 +7,6 @@
     <classPathEntry location="D:\mysql-connector-java-5.1.47.jar"/>
 
     <context id="mysql" targetRuntime="MyBatis3">
-
-
         <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；
             一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖
          -->
@@ -24,14 +22,12 @@
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
         <!--使用自定义的 lombok 插件 取消 getter 和 setter 的生成 -->
-
-        <commentGenerator type="com.leo.tools.MyCommentGenerator">
+        <commentGenerator type="com.leo.mybatis.plugins.CustomAnnotationGenerator">
             <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="false"/>
             <property name="addRemarkComments" value="true"/>
         </commentGenerator>
-
 
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
@@ -87,23 +83,14 @@
         <!--        enableCountByExample="false" enableUpdateByExample="false"-->
         <!--        enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
 <!--        &lt;!&ndash;        </table>&ndash;&gt;-->
-        <table tableName="checkin_log" domainObjectName="CheckinLog"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
-
-<!--        <table tableName="cki_check_in_record" domainObjectName="CheckinRecord"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false"-->
-<!--               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-<!--        </table>-->
-        <!--        <table tableName="v_shuttle_service" domainObjectName="Shuttle"-->
+        <!--        <table tableName="checkin_log" domainObjectName="CheckinLog"-->
         <!--               enableCountByExample="false" enableUpdateByExample="false"-->
         <!--               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
         <!--        </table>-->
-        <!--<table tableName="wx_sys_config" domainObjectName="WxSysConfig"-->
-        <!--enableCountByExample="false" enableUpdateByExample="false"-->
-        <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-        <!--</table>-->
+        <table tableName="id_test" domainObjectName="IdTest"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
 
     </context>
 </generatorConfiguration>
