@@ -24,7 +24,8 @@
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
         <!--使用自定义的 lombok 插件 取消 getter 和 setter 的生成 -->
-<!--        <plugin type="com.leo.tools.IngoreSetterAndGetterPlugin"/>-->
+        <plugin type="com.leo.mybatis.plugins.LombokGeneratorPlugin"/>
+        <!--通用插件 -->
 <!--        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">-->
 <!--            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
 <!--            <property name="caseSensitive" value="true"/>-->
@@ -32,7 +33,7 @@
 <!--            <property name="beginningDelimiter" value="`"/>-->
 <!--            <property name="endingDelimiter" value="`"/>-->
 <!--        </plugin>-->
-        <commentGenerator type="com.leo.tools.MyCommentGenerator">
+        <commentGenerator type="com.leo.mybatis.plugins.CustomAnnotationGenerator">
             <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="false"/>
@@ -42,9 +43,9 @@
 
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://172.31.40.42:3306/ce_udc?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true"
-                        userId="b2cuser"
-                        password="b2cuser">
+                        connectionURL=""
+                        userId=""
+                        password="">
         </jdbcConnection>
 
         <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
@@ -55,7 +56,7 @@
         targetPackage：生成的类要放的包，真实的包受enableSubPackages属性控制；
         targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
      -->
-        <javaModelGenerator targetPackage="com.wintelia.service.b2c.entity.sales" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.leo.mybatis.po" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
             <!-- 可以为所有生成的接口添加一个父接口，但是MBG只负责生成，不负责检查
@@ -64,11 +65,11 @@
         </javaModelGenerator>
         <!-- 生成映射文件的包名和位置-->
         <sqlMapGenerator targetPackage="mapping"
-                         targetProject="src/main/java/com/wintelia/service/b2c/mapper/xml/sales">
+                         targetProject="src/main/java/com/leo/mybatis/dao/xml/">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.wintelia.service.b2c.mapper.sales"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.leo.mybatis.dao"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
