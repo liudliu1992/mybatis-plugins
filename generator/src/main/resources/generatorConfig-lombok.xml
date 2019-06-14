@@ -43,9 +43,9 @@
 
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL=""
-                        userId=""
-                        password="">
+                        connectionURL="jdbc:mysql://172.31.40.42:3306/ce_udc?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true"
+                        userId="b2cuser"
+                        password="b2cuser">
         </jdbcConnection>
 
         <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
@@ -89,7 +89,7 @@
         <!--</table>-->
         <!--<table tableName="wx_account" domainObjectName="WxAccount"-->
         <!--enableCountByExample="false" enableUpdateByExample="false"-->
-        <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+        <!--enableDeleteByExaple="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
         <!--</table>-->
         <!--        <table tableName="lt_auto_checkin_data" domainObjectName="AutoCheckinData"-->
         <!--        enableCountByExample="false" enableUpdateByExample="false"-->
@@ -103,18 +103,7 @@
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
-<!--        <table tableName="cki_check_in_record" domainObjectName="CheckinRecord"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false"-->
-<!--               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-<!--        </table>-->
-        <!--        <table tableName="v_shuttle_service" domainObjectName="Shuttle"-->
-        <!--               enableCountByExample="false" enableUpdateByExample="false"-->
-        <!--               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-        <!--        </table>-->
-        <!--<table tableName="wx_sys_config" domainObjectName="WxSysConfig"-->
-        <!--enableCountByExample="false" enableUpdateByExample="false"-->
-        <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-        <!--</table>-->
+
 
     </context>
 </generatorConfiguration>

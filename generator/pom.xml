@@ -17,7 +17,7 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-             <properties>
+            <properties>
                 <environment>current</environment>
             </properties>
         </profile>
@@ -27,7 +27,7 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
-             <properties>
+            <properties>
                 <environment>custom</environment>
             </properties>
         </profile>
@@ -37,7 +37,7 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
-             <properties>
+            <properties>
                 <environment>lombok</environment>
             </properties>
         </profile>
@@ -59,6 +59,11 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>4.0.0</version>
         </dependency>
     </dependencies>
     <build>
