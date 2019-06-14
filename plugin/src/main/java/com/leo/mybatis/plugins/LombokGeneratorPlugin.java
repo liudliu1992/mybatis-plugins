@@ -22,9 +22,12 @@ public class LombokGeneratorPlugin extends PluginAdapter {
     @Override
     public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass,
                                                  IntrospectedTable introspectedTable) {
-        //该代码表示在生成class的时候，向topLevelClass添加一个@Setter和@Getter注解
+        //该代码表示在生成class的时候，向topLevelClass添加一个@Data@EqualsAndHashCode注解
         topLevelClass.addAnnotation("@Data");
+        topLevelClass.addAnnotation("@EqualsAndHashCode(callSuper = true)");
+
         topLevelClass.addImportedType("lombok.Data");
+        topLevelClass.addImportedType("lombok.EqualsAndHashCode");
         return super.modelBaseRecordClassGenerated(topLevelClass,
                 introspectedTable);
     }
