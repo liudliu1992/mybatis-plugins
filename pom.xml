@@ -6,6 +6,7 @@
     <modules>
         <module>plugin</module>
         <module>generator</module>
+        <module>demo</module>
     </modules>
     <parent>
         <groupId>com.leo</groupId>
@@ -16,7 +17,7 @@
     <groupId>com.leo.mybatis</groupId>
     <artifactId>parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>leos_mybatis_parent</name>
+    <name>leo_mybatis_parent</name>
     <description>mybatis使用父类</description>
 
     <properties>
