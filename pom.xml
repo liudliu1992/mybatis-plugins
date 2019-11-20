@@ -14,8 +14,7 @@
         <version>1.0-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.leo.mybatis</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>mybatis-tool</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>leo_mybatis_parent</name>
     <description>mybatis使用父类</description>
